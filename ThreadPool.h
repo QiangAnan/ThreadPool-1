@@ -36,7 +36,7 @@ inline ThreadPool::ThreadPool(size_t threads)
 {
     for(size_t i = 0;i<threads;++i)
         workers.emplace_back(
-            [this]
+            [this]  //值捕获当前对象
             {
                 for(;;)
                 {
